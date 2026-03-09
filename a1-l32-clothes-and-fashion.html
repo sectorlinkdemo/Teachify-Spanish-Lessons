@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="lesson-data" content='{"level": "A1", "lesson_num": "32", "title": "Clothes and Fashion", "topic": "Shopping & Style", "slug": "a1-l32-clothes-and-fashion"}'>
+<title>A1 · Clothes and Fashion · Teachify</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--lime:#d3ee6e;--purple:#dec8f1;--black:#0d0d0d;--beige:#fbfbf9;--gray:#f0efea}
+body{font-family:'Nunito Sans',sans-serif;background:var(--beige);color:var(--black);line-height:1.6}
+/* NAV */
+.nav{background:var(--black);padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--lime);letter-spacing:1px;text-decoration:none}
+.nav-back{color:#ccc;text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--lime)}
+.nav-badge{background:var(--lime);color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:14px;padding:3px 10px;border-radius:2px;letter-spacing:1px}
+/* HERO */
+.hero{background:var(--black);padding:40px 24px 32px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='30' cy='30' rx='10' ry='7' fill='%23d3ee6e' opacity='0.06'/%3E%3C/svg%3E") repeat;opacity:0.5}
+.hero-inner{max-width:800px;margin:0 auto;position:relative}
+.hero-level{font-family:'Bebas Neue',sans-serif;font-size:13px;letter-spacing:3px;color:var(--lime);margin-bottom:8px}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,8vw,72px);color:#fff;line-height:1;margin-bottom:6px}
+.hero-title span{color:var(--lime)}
+.hero-theme{font-size:14px;color:#888;letter-spacing:2px;text-transform:uppercase;margin-bottom:28px}
+.hero-meta{display:flex;gap:16px;flex-wrap:wrap}
+.hero-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#ddd;font-size:12px;padding:5px 14px;border-radius:100px}
+/* LEOPARD */
+.leopard{width:100%;height:28px;background:repeating-radial-gradient(ellipse 14px 10px at 50% 50%,var(--black) 0%,var(--black) 30%,transparent 30%,transparent 100%) var(--lime);background-size:28px 20px}
+/* SECTIONS */
+.page{max-width:800px;margin:0 auto;padding:32px 20px 80px}
+.section{margin-bottom:40px}
+.section-label{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:4px;color:#888;text-transform:uppercase;margin-bottom:6px}
+.section-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--black);margin-bottom:20px;border-left:4px solid var(--lime);padding-left:12px}
+/* VOCAB */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.vocab-card{background:#fff;border:1px solid #e8e4de;border-radius:8px;padding:16px;cursor:pointer;transition:.2s}
+.vocab-card:hover{border-color:var(--lime);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.06)}
+.vocab-word{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--black);margin-bottom:4px}
+.vocab-def{font-size:13px;color:#555;margin-bottom:6px}
+.vocab-ex{font-size:12px;color:#888;font-style:italic;display:none}
+.vocab-card.open .vocab-ex{display:block}
+.vocab-card.open{border-color:var(--purple);background:#faf7ff}
+/* GRAMMAR */
+.grammar-box{background:var(--black);color:#fff;border-radius:10px;padding:24px;border-left:4px solid var(--lime)}
+.grammar-box p{font-size:14px;line-height:1.8;white-space:pre-line}
+/* READING */
+.reading-box{background:#fff;border:1px solid #e8e4de;border-radius:10px;padding:28px}
+.reading-box p{font-size:15px;line-height:1.85;margin-bottom:14px;color:#333}
+.reading-box p:last-child{margin-bottom:0}
+/* GAP FILL */
+.word-bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;padding:16px;background:#fff;border:1px solid #e8e4de;border-radius:8px}
+.wb-word{background:var(--lime);color:var(--black);font-weight:700;font-size:13px;padding:4px 12px;border-radius:4px}
+.gf-item{display:flex;align-items:flex-start;gap:12px;margin-bottom:16px;padding:14px;background:#fff;border:1px solid #e8e4de;border-radius:8px}
+.gf-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--lime);min-width:24px}
+.gf-sentence{font-size:15px;line-height:1.7}
+.gf-input{border:none;border-bottom:2px solid var(--lime);background:transparent;font-size:15px;font-family:'Nunito Sans',sans-serif;padding:2px 6px;width:120px;outline:none;color:var(--black)}
+.gf-input.correct{border-bottom-color:#22c55e;color:#22c55e}
+.gf-input.wrong{border-bottom-color:#ef4444;color:#ef4444}
+.check-btn{background:var(--lime);color:var(--black);font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:2px;border:none;padding:12px 32px;border-radius:6px;cursor:pointer;margin-top:8px;transition:.2s}
+.check-btn:hover{background:#c1de5a}
+/* MCQ */
+.mcq-item{margin-bottom:24px;background:#fff;border:1px solid #e8e4de;border-radius:8px;padding:20px}
+.mcq-q{font-size:15px;font-weight:600;margin-bottom:14px}
+.mcq-num{font-family:'Bebas Neue',sans-serif;font-size:20px;color:var(--lime);margin-right:10px}
+.mcq-opts{display:flex;flex-wrap:wrap;gap:8px}
+.mcq-opt{background:var(--gray);border:2px solid transparent;font-family:'Nunito Sans',sans-serif;font-size:13px;padding:8px 16px;border-radius:6px;cursor:pointer;transition:.15s;text-align:left}
+.mcq-opt:hover{border-color:var(--lime)}
+.mcq-opt.correct{background:#dcfce7;border-color:#22c55e;color:#166534}
+.mcq-opt.wrong{background:#fee2e2;border-color:#ef4444;color:#991b1b}
+.mcq-feedback{font-size:13px;margin-top:8px;font-weight:600}
+/* SPEAKING */
+.sp-prompt{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e8e4de;border-radius:8px;padding:18px;margin-bottom:12px}
+.sp-num{font-family:'Bebas Neue',sans-serif;font-size:24px;color:var(--lime);min-width:28px}
+.sp-prompt p{font-size:15px;line-height:1.6}
+/* WRITING */
+.writing-box{background:#fff;border:2px solid var(--purple);border-radius:10px;padding:24px}
+.writing-task{font-size:15px;line-height:1.7;color:#333;margin-bottom:20px}
+.writing-area{width:100%;min-height:140px;border:1px solid #ddd;border-radius:8px;padding:14px;font-family:'Nunito Sans',sans-serif;font-size:14px;resize:vertical;outline:none;transition:.2s}
+.writing-area:focus{border-color:var(--purple)}
+/* FUN FACT */
+.funfact{background:linear-gradient(135deg,var(--black),#1a1a2e);color:#fff;border-radius:10px;padding:24px;display:flex;gap:16px;align-items:flex-start}
+.funfact-icon{font-size:28px;flex-shrink:0}
+.funfact-text{font-size:14px;line-height:1.7}
+.funfact-text strong{color:var(--lime)}
+/* PROGRESS */
+.progress-bar{height:4px;background:#e8e4de;border-radius:100px;margin-bottom:32px;overflow:hidden}
+.progress-fill{height:100%;background:var(--lime);border-radius:100px;width:80%}
+/* FOOTER */
+.lesson-footer{background:var(--black);padding:32px 24px;text-align:center;margin-top:40px}
+.footer-text{color:#888;font-size:13px}
+.footer-text a{color:var(--lime);text-decoration:none}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">Teachify</a>
+  <a href="index.html" class="nav-back">← Back to Library</a>
+  <span class="nav-badge">A1 · Lesson 32</span>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-level">A1 — BEGINNER · LESSON 32 OF 40</div>
+    <h1 class="hero-title">Clothes <span>and Fashion</span></h1>
+    <div class="hero-theme">Shopping & Style</div>
+    <div class="hero-meta">
+      <span class="hero-pill">⏱ 60 min</span>
+      <span class="hero-pill">📚 10 vocab words</span>
+      <span class="hero-pill">🎯 Shopping & Style</span>
+    </div>
+  </div>
+</div>
+<div class="leopard"></div>
+
+<div class="page">
+  <div class="progress-bar"><div class="progress-fill"></div></div>
+
+  <!-- VOCABULARY -->
+  <div class="section">
+    <div class="section-label">Section 1</div>
+    <div class="section-title">Vocabulary</div>
+    <div class="vocab-grid"><div class="vocab-card">
+  <div class="vocab-word">shirt</div>
+  <div class="vocab-def">a piece of clothing with buttons, worn on the top half</div>
+  <div class="vocab-ex">"He wears a white shirt to work."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">trousers</div>
+  <div class="vocab-def">a piece of clothing that covers both legs</div>
+  <div class="vocab-ex">"I need new trousers for the meeting."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">dress</div>
+  <div class="vocab-def">a one-piece item of clothing for women</div>
+  <div class="vocab-ex">"She is wearing a blue dress today."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">jacket</div>
+  <div class="vocab-def">a short coat worn over other clothes</div>
+  <div class="vocab-ex">"Take a jacket — it is cold outside."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">shoes</div>
+  <div class="vocab-def">coverings for the feet, usually made of leather</div>
+  <div class="vocab-ex">"These shoes are very comfortable."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">size</div>
+  <div class="vocab-def">how big or small something is</div>
+  <div class="vocab-ex">"What size do you wear?"</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">colour</div>
+  <div class="vocab-def">the appearance of something — red, blue, green etc.</div>
+  <div class="vocab-ex">"I prefer dark colours for work."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">price</div>
+  <div class="vocab-def">the amount of money you pay for something</div>
+  <div class="vocab-ex">"The price of that jacket is too high."</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">try on</div>
+  <div class="vocab-def">to put on clothing to see if it fits</div>
+  <div class="vocab-ex">"Can I try on these trousers?"</div>
+</div><div class="vocab-card">
+  <div class="vocab-word">fashionable</div>
+  <div class="vocab-def">following the latest style or trends</div>
+  <div class="vocab-ex">"She always wears fashionable clothes."</div>
+</div></div>
+    <p style="font-size:12px;color:#888;margin-top:12px">👆 Click any card to see an example sentence</p>
+  </div>
+
+  <!-- GRAMMAR -->
+  <div class="section">
+    <div class="section-label">Section 2</div>
+    <div class="section-title">Grammar Focus</div>
+    <div class="grammar-box"><p>What are you wearing? I am wearing a blue shirt and black trousers. Describing with colour + size: a small red jacket / big black shoes. Shopping phrases: Can I try this on? Do you have it in a larger size? How much is it?</p></div>
+  </div>
+
+  <!-- READING -->
+  <div class="section">
+    <div class="section-label">Section 3</div>
+    <div class="section-title">Reading</div>
+    <div class="reading-box"><p>Ana is going shopping today. She needs new clothes for a job interview next week.</p><p>She goes into a clothes shop. A shop assistant comes to help her. 'Good morning. Can I help you?' he says.</p><p>'Yes, please. I am looking for a smart jacket,' says Ana. 'I have an interview.'</p><p>'Of course! What size are you?' asks the assistant.</p><p>'I am a medium,' says Ana.</p><p>The assistant shows her three jackets — a black one, a grey one, and a dark blue one. Ana tries on the black jacket. It fits perfectly.</p><p>'How much is it?' she asks.</p><p>'It is sixty-five euros,' says the assistant.</p><p>Ana buys the jacket. She is ready for her interview!</p></div>
+  </div>
+
+  <!-- GAP FILL -->
+  <div class="section">
+    <div class="section-label">Section 4</div>
+    <div class="section-title">Gap Fill</div>
+    <p style="font-size:14px;color:#555;margin-bottom:16px">Use the words from the word bank to complete the sentences.</p>
+    <div class="word-bank"><span class="wb-word">shirt</span> · <span class="wb-word">trousers</span> · <span class="wb-word">dress</span> · <span class="wb-word">jacket</span> · <span class="wb-word">shoes</span></div>
+    <div id="gf-items"><div class="gf-item"><span class="gf-num">1</span><span class="gf-sentence">My <input class=\'gf-input\' data-answer=\'shirt\' data-idx=\'0\'  placeholder=\'...\'/> at the moment is to improve my English.</span></div><div class="gf-item"><span class="gf-num">2</span><span class="gf-sentence">Can you <input class=\'gf-input\' data-answer=\'trousers\' data-idx=\'1\'  placeholder=\'...\'/> the best option for our team?</span></div><div class="gf-item"><span class="gf-num">3</span><span class="gf-sentence">We need to find a good <input class=\'gf-input\' data-answer=\'dress\' data-idx=\'2\'  placeholder=\'...\'/> before the deadline.</span></div><div class="gf-item"><span class="gf-num">4</span><span class="gf-sentence">Please <input class=\'gf-input\' data-answer=\'jacket\' data-idx=\'3\'  placeholder=\'...\'/> if you have any questions after the meeting.</span></div><div class="gf-item"><span class="gf-num">5</span><span class="gf-sentence">The <input class=\'gf-input\' data-answer=\'shoes\' data-idx=\'4\'  placeholder=\'...\'/> for next year looks very positive.</span></div></div>
+    <button class="check-btn" onclick="checkGapFill()">CHECK ANSWERS</button>
+    <div id="gf-result" style="margin-top:12px;font-weight:700;font-size:15px"></div>
+  </div>
+
+  <!-- MCQ -->
+  <div class="section">
+    <div class="section-label">Section 5</div>
+    <div class="section-title">Comprehension</div>
+    <div id="mcq-container"><div class="mcq-item"><p class="mcq-q"><span class="mcq-num">1</span>Why does Ana need new clothes?</p><div class="mcq-opts"><button class="mcq-opt" data-q="0" data-ans="She has a job interview" onclick="checkMCQ(this)">She is going on holiday</button><button class="mcq-opt" data-q="0" data-ans="She has a job interview" onclick="checkMCQ(this)">She has a job interview</button><button class="mcq-opt" data-q="0" data-ans="She has a job interview" onclick="checkMCQ(this)">She is going to a party</button><button class="mcq-opt" data-q="0" data-ans="She has a job interview" onclick="checkMCQ(this)">She lost her old clothes</button></div><div class="mcq-feedback" id="mcq-fb-0"></div></div><div class="mcq-item"><p class="mcq-q"><span class="mcq-num">2</span>What size is Ana?</p><div class="mcq-opts"><button class="mcq-opt" data-q="1" data-ans="Medium" onclick="checkMCQ(this)">Small</button><button class="mcq-opt" data-q="1" data-ans="Medium" onclick="checkMCQ(this)">Large</button><button class="mcq-opt" data-q="1" data-ans="Medium" onclick="checkMCQ(this)">Extra large</button><button class="mcq-opt" data-q="1" data-ans="Medium" onclick="checkMCQ(this)">Medium</button></div><div class="mcq-feedback" id="mcq-fb-1"></div></div><div class="mcq-item"><p class="mcq-q"><span class="mcq-num">3</span>Which jacket does Ana try on first?</p><div class="mcq-opts"><button class="mcq-opt" data-q="2" data-ans="The black one" onclick="checkMCQ(this)">The grey one</button><button class="mcq-opt" data-q="2" data-ans="The black one" onclick="checkMCQ(this)">The dark blue one</button><button class="mcq-opt" data-q="2" data-ans="The black one" onclick="checkMCQ(this)">The black one</button><button class="mcq-opt" data-q="2" data-ans="The black one" onclick="checkMCQ(this)">The white one</button></div><div class="mcq-feedback" id="mcq-fb-2"></div></div><div class="mcq-item"><p class="mcq-q"><span class="mcq-num">4</span>How much does the jacket cost?</p><div class="mcq-opts"><button class="mcq-opt" data-q="3" data-ans="65 euros" onclick="checkMCQ(this)">45 euros</button><button class="mcq-opt" data-q="3" data-ans="65 euros" onclick="checkMCQ(this)">75 euros</button><button class="mcq-opt" data-q="3" data-ans="65 euros" onclick="checkMCQ(this)">65 euros</button><button class="mcq-opt" data-q="3" data-ans="65 euros" onclick="checkMCQ(this)">55 euros</button></div><div class="mcq-feedback" id="mcq-fb-3"></div></div></div>
+  </div>
+
+  <!-- SPEAKING -->
+  <div class="section">
+    <div class="section-label">Section 6</div>
+    <div class="section-title">Speaking Practice</div>
+    <p style="font-size:14px;color:#555;margin-bottom:18px">Discuss these questions with your teacher or a partner.</p>
+    <div class="sp-prompt"><span class="sp-num">1</span><p>Describe what you are wearing today.</p></div><div class="sp-prompt"><span class="sp-num">2</span><p>What do you usually wear to work? Is it formal or casual?</p></div><div class="sp-prompt"><span class="sp-num">3</span><p>Do you like shopping for clothes? Why or why not?</p></div>
+  </div>
+
+  <!-- WRITING -->
+  <div class="section">
+    <div class="section-label">Section 7</div>
+    <div class="section-title">Writing Task</div>
+    <div class="writing-box">
+      <p class="writing-task">Write 6–8 sentences about your style. What do you like wearing? What colours do you prefer? What do you wear to work vs at the weekend?</p>
+      <textarea class="writing-area" placeholder="Write your answer here..."></textarea>
+    </div>
+  </div>
+
+  <!-- FUN FACT -->
+  <div class="funfact">
+    <div class="funfact-icon">💡</div>
+    <div class="funfact-text"><strong>Did you know?</strong><br>Spain has some of the most famous fashion brands in the world. Zara, Mango, and Camper are all Spanish companies. Zara alone has over 2,000 shops worldwide.</div>
+  </div>
+
+</div>
+
+<div class="lesson-footer">
+  <p class="footer-text">Teachify Lesson Library · <a href="index.html">Back to all lessons</a></p>
+</div>
+
+<script>
+// Vocab cards
+document.querySelectorAll('.vocab-card').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('open')));
+
+// Gap fill
+function checkGapFill(){
+  let correct=0,total=0;
+  document.querySelectorAll('.gf-input').forEach(inp=>{
+    total++;
+    const ans=inp.dataset.answer.toLowerCase().trim();
+    const val=inp.value.toLowerCase().trim();
+    inp.classList.remove('correct','wrong');
+    if(val===ans){inp.classList.add('correct');correct++;}
+    else{inp.classList.add('wrong');}
+  });
+  const r=document.getElementById('gf-result');
+  r.textContent=correct===total?`✅ All ${total} correct! Well done!`:`You got ${correct}/${total} correct. Try again!`;
+  r.style.color=correct===total?'#22c55e':'#ef4444';
+}
+
+// MCQ
+function checkMCQ(btn){
+  const q=btn.dataset.q;
+  const ans=btn.dataset.ans;
+  const container=btn.closest('.mcq-opts');
+  if(container.querySelector('.correct,.wrong'))return;
+  const fb=document.getElementById('mcq-fb-'+q);
+  if(btn.textContent.trim()===ans){
+    btn.classList.add('correct');
+    fb.textContent='✅ Correct!';fb.style.color='#22c55e';
+  }else{
+    btn.classList.add('wrong');
+    fb.textContent='❌ Not quite. The answer is: '+ans;fb.style.color='#ef4444';
+    container.querySelectorAll('.mcq-opt').forEach(b=>{if(b.textContent.trim()===ans)b.classList.add('correct');});
+  }
+}
+</script>
+</body>
+</html>
